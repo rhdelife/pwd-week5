@@ -38,7 +38,7 @@ exports.create = asyncHandler(async (req, res) => {
   const required = ['restaurantName', 'category', 'location'];
   const missing = required.find((k) => !payload[k]);
   if (missing) {
-    res.status(400).json({ error: { message: `'${missing}' is required` } });
+    res.status(400).json({ error: { message: `'${missing}' is required!!` } });
     return;
   }
 
