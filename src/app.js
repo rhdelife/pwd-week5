@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const restaurantsRouter = require('./routes/restaurants.routes');
+const submissionsRouter = require('./routes/submissions.routes');
 const notFound = require('./middleware/notFound.middleware');
 const errorHandler = require('./middleware/error.middleware');
 
@@ -17,6 +18,8 @@ function createApp() {
   });
 
   app.use('/api/restaurants', restaurantsRouter);
+  app.use('/api/submissions', submissionsRouter);
+
   app.use(notFound);
   app.use(errorHandler);
 
@@ -24,6 +27,3 @@ function createApp() {
 }
 
 module.exports = createApp;
-console.log('restaurantsRouter =', restaurantsRouter);
-console.log('notFound =', notFound);
-console.log('errorHandler =', errorHandler);
