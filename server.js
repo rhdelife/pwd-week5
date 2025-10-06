@@ -1,4 +1,9 @@
 // server.js
+
+// server.js 초기에
+const { MONGODB_URI } = process.env;
+console.log('MONGODB_URI present?', !!MONGODB_URI, MONGODB_URI?.slice(0, 20) + '...');
+
 require('dotenv').config();
 const { connectDB, closeDB } = require('./src/config/db');
 const createApp = require('./src/app');
